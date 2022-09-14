@@ -34,6 +34,11 @@ var map1 = new maplibregl.Map({
 var map2 = new maplibregl.Map({
   container: "map2",
   style: "https://ubukawa.github.io/practice-bm/style-sentinel-ny.json",
+  zoom: 9,
+  center: [-73.8128, 40.8513], // center [lng, lat]
+  maxZoom: 0, // min zoom
+  maxZoom: 16, // max zoom
+  hash: true
 });
 
 var wrapperSelector = "#wrapper";
@@ -51,8 +56,8 @@ var map = new maplibregl.Compare(
   options
 );
 
-map1.addControl(new maplibregl.NavigationControl(), 'bottom-left');
 map1.addControl(new maplibregl.ScaleControl(), 'bottom-left' );
+map1.addControl(new maplibregl.NavigationControl(), 'bottom-left');
 
 </script>
 </body>
