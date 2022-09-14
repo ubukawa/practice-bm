@@ -1,0 +1,17 @@
+{
+"version":8,
+"sources":{
+   "r": {
+      "type": "raster",
+      "tiles": ["https://ubukawa.github.io/sentinel2-ny20211019/ny20211019/{z}/{x}/{y}.png"],
+      "attribution": "Copernicus Sentinel data (2021, EUROPEAN COMMISSION).<br>Observed on 2021-10-19",
+      "tileSize": 256,"maxzoom": 14}
+},
+"layers":[
+{"id": "sentinel2","type":"raster","source":"r"}
+],
+  "center": [
+    -73.96474,
+    40.74991
+  ]
+}
