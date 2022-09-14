@@ -18,16 +18,6 @@
       "maxzoom": 13,
       "minzoom": 5
     },
-    "terrainSource": {
-      "type": "raster-dem",
-      "tiles": [
-        "https://ubukawa.github.io/srtm-rgb-nyc/zxy/{z}/{x}/{y}.png"
-      ],
-      "attribution": "RGB Elevation from SRTM DEM - 1 second (USGS)",
-      "tileSize": 256,
-      "maxzoom": 12,
-      "minzoom": 4
-    },
     "hillshadeSource": {
       "type": "raster-dem",
       "tiles": [
@@ -6959,7 +6949,7 @@
     }
   ],
   "terrain": {
-    "source": "terrainSource",
+    "source": "hillshadeSource",
     "exaggeration": 1
   }
 }
