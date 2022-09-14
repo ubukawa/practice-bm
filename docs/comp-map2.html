@@ -17,7 +17,9 @@
 var map = new maplibregl.Map({
 container: 'map', // container id
 style: 'https://ubukawa.github.io/practice-bm/style-sentinel-ny.json', // style URL
-maxZoom: 19 // max zoom of the map
+maxZoom: 19, // max zoom of the map
+maxPitch: 85,
+hash: true
 });
 
 //UI
