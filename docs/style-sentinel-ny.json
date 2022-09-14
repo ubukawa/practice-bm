@@ -10,5 +10,5 @@
 "layers":[
 {"id": "sentinel2","type":"raster","source":"r"}
 ],
-  "center": [-73.96474, 40.74991]
+  "center": [-73.8128, 40.8513]
 }
