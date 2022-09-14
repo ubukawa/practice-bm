@@ -24,6 +24,7 @@ maxZoom: 19 // max zoom of the map
 });
 
 //for 3D terrain
+map.on('load', () => {
 map.addSource("terrain3D", {
    "type": "raster-dem",
    "tiles": ["https://ubukawa.github.io/srtm-rgb-nyc/zxy/{z}/{x}/{y}.png"],
@@ -36,6 +37,8 @@ map.setTerrain({
    source: "terrain3D",
    exaggeration: 1
 });
+});
+
 
 //UI
 map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
