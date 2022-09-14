@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display a map - map for compare</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="./maplibre-gl@2.4.0/maplibre-gl.js"></script>
+<link href="./maplibre-gl@2.4.0/maplibre-gl.css" rel="stylesheet" />
+<script src="./maplibre-gl-compare/dist/maplibre-gl-compare.js"></script>
+<link href="./maplibre-gl-compare/dist/maplibre-gl-compare.css" rel="stylesheet" />
+<style>
+    body { margin: 0; padding: 0; overflow: hidden; }
+    body * {webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+    .map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    .controls { position: absolute; top: 0; right: 0; }
+</style>
+</head>
+<body>
+ <div id="wrapper">
+   <div id="map1" class="map"></div>
+   <div id="map2" class="map"></div>
+ </div>
+<script>
+var map1 = new maplibregl.Map({
+  container: "map1",
+  style: "https://ubukawa.github.io/osm-neighbor/style.json",
+  zoom: 9,
+  center: [-73.8128, 40.8513], // center [lng, lat]
+  maxZoom: 0, // min zoom
+  maxZoom: 16, // max zoom
+  hash: true
+});
+
+var map2 = new maplibregl.Map({
+  container: "map2",
+  style: "https://ubukawa.github.io/practice-bm/style-sentinel-ny.json",
+});
+
+var wrapperSelector = "#wrapper";
+var wrapperElement = document.body.querySelectorAll("#wrapper")[0];
+
+var options = {
+  mousemove: true,
+  orientation: "horizontal",
+};
+
+var map = new maplibregl.Compare(
+  map1,
+  map2,
+  wrapperSelector,
+  options
+);
+
+map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
+map.addControl(new maplibregl.ScaleControl() );
+
+</script>
+</body>
+</html>
