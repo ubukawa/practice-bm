@@ -23,6 +23,20 @@ style: 'https://ubukawa.github.io/practice-bm/srtm.json', // style URL
 maxZoom: 19 // max zoom of the map
 });
 
+//for 3D terrain
+map.addSource("terrain3D",{
+   "type": "raster-dem",
+   "tiles": ["https://ubukawa.github.io/srtm-rgb-nyc/zxy/{z}/{x}/{y}.png"],
+   "attribution": "RGB Elevation from SRTM DEM - 1 second (USGS)",
+   "tileSize": 256,
+   "maxzoom": 12,
+   "minzoom": 4
+});
+map.setTerrain({
+   source: "terrain3D",
+   exaggeration: 1
+});
+
 //UI
 map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
 map.addControl(new maplibregl.GeolocateControl({positionOptions: {enableHighAccuracy: true},trackUserLocation: true}), 'top-right');
